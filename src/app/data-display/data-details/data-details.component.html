@@ -1,0 +1,12 @@
+<div *ngIf="item; else notFound">
+    <h2>Szczegóły rekordu ID: {{ item.id }}</h2>
+    <p><strong>Tytuł:</strong> {{ item.text1 }}</p>
+    <p><strong>Opis:</strong> {{ item.text2 }}</p>
+    <p><strong>Wartość:</strong> {{ item.value | number:'1.3-3' }}</p>
+    <p><strong>Data:</strong> {{ item.date | date:'dd.MM.yyyy' }}</p>
+    <button routerLink="/list">Powrót do listy</button>
+  </div>
+
+  <ng-template #notFound>
+    <p>Nie odnaleziono rekordu o podanym ID.</p>
+  </ng-template>
